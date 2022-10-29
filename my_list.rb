@@ -1,7 +1,7 @@
-require_relative 'Enumerable'
+require_relative 'MyEnumerable'
 
 class MyList
-  include Enumerable
+  include MyEnumerable
 
   def initialize(*list)
     @list = list
@@ -32,5 +32,7 @@ p(list.any? { |e| e == 5 })
 #=> false
 
 # Test #filter
-puts(list.filter(&:even?))
+
+p(list.filter(&:even?))
+
 #=> [2, 4]
