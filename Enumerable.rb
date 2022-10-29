@@ -1,24 +1,23 @@
 module Enumerable
   def all?
-    for i in self
+    each do |i|
       return false unless yield(i)
     end
-    return true
+    true
   end
 
   def any?
-    for i in self
+    each do |i|
       return true if yield(i)
     end
-    return false
+    false
   end
 
   def filter
     result = []
-    for i in self
+    each do |i|
       result << i if yield(i)
     end
-    return result
+    result
   end
-
 end
